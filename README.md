@@ -2,7 +2,7 @@
 
 To use this app for yourself, you'll need a server token for the Uber API.  Get that at https://developer.uber.com.
 
-When you have server token, set it to the variable SERVER_TOKEN in SurgePriceWidgetApplication.
+When you have a server token, set it to the String SERVER_TOKEN in SurgePriceWidgetApplication.
 
 For example,
 
