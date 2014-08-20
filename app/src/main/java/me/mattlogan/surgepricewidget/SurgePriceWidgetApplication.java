@@ -18,7 +18,6 @@ public class SurgePriceWidgetApplication extends Application {
     static final String SERVER_TOKEN = "get_your_own_server_token_at_https://developer.uber.com/";
 
     UberApiHandler uberApiHandler;
-    CurrentLocationClient currentLocationClient;
 
     @Override public void onCreate() {
         Log.d("testing", "application onCreate");
