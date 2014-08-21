@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/mattlogan/SurgePriceWidget/master/github-assets/screenshot.png" height="540"/>
+
 ### Get Started
 
 To use this app for yourself, you'll need a server token for the Uber API.  Get that at https://developer.uber.com.
