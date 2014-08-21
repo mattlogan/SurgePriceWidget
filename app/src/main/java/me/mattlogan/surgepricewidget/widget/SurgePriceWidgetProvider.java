@@ -75,10 +75,11 @@ public class SurgePriceWidgetProvider extends AppWidgetProvider {
 
     @Subscribe public void onRetrievePricesSuccess(RetrievePricesSuccessEvent event) {
         updateViews(event.getPriceListWrapper().getPrices());
+        cleanup();
     }
 
     @Subscribe public void onRetrievePricesFailed(RetrievePricesFailedEvent event) {
-        // todo: show error
+        cleanup();
     }
 
     void updateViews(List<Price> priceList) {
@@ -90,8 +91,11 @@ public class SurgePriceWidgetProvider extends AppWidgetProvider {
                     views.setViewVisibility(nameTextViews[i], View.GONE);
                     views.setViewVisibility(surgePriceTextViews[i], View.GONE);
                 } else {
-                    views.setTextViewText(nameTextViews[i],
-                            priceList.get(i).getLocalizedDisplayName());
+                    views.setViewVisibility(nameTextViews[i], View.VISIBLE);
+                    views.setViewVisibility(surgePriceTextViews[i], View.VISIBLE);
+
+                    String nameText = chopNameText(priceList.get(i).getLocalizedDisplayName());
+                    views.setTextViewText(nameTextViews[i], nameText);
                     views.setTextViewText(surgePriceTextViews[i],
                             "" + priceList.get(i).getSurgeMultiplier());
                 }
@@ -99,5 +103,15 @@ public class SurgePriceWidgetProvider extends AppWidgetProvider {
 
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
+    }
+
+    void cleanup() {
+        uberApiBus.unregister(this);
+        locationBus.unregister(this);
+        locationClient.disconnect();
+    }
+
+    String chopNameText(String string) {
+        return string.toUpperCase().replace("UBER", "");
     }
 }
