@@ -11,10 +11,6 @@ When you have obtained a server token, create a new file in `res/values` called 
 </resources>
 ```
 
-### Todo
-
-Convert UI from Activity to Widget for Android home screen.
-
 ### Open Source
 
 This app uses Retrofit and Otto, both by Square Inc.
