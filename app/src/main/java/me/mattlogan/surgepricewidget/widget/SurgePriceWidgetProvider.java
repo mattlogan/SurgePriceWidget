@@ -68,7 +68,7 @@ public class SurgePriceWidgetProvider extends AppWidgetProvider {
 
     @Subscribe public void onLocationClientConnected(LocationClientConnectedEvent event) {
         Location location = locationClient.getLastLocation();
-        UberApiBus.getInstance().post(new RetrievePricesRequestedEvent(
+        uberApiBus.post(new RetrievePricesRequestedEvent(
                 (float) location.getLatitude(), (float) location.getLongitude(),
                 (float) location.getLatitude(), (float) location.getLongitude()));
     }
