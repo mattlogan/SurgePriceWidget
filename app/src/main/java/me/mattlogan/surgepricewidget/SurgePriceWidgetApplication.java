@@ -41,6 +41,4 @@ public class SurgePriceWidgetApplication extends Application {
                 .build()
                 .create(UberApi.class);
     }
-
-
 }
