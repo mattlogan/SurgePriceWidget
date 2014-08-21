@@ -8,6 +8,7 @@ import android.util.Log;
 import me.mattlogan.surgepricewidget.api.UberApi;
 import me.mattlogan.surgepricewidget.api.UberApiBus;
 import me.mattlogan.surgepricewidget.api.UberApiHandler;
+import me.mattlogan.surgepricewidget.location.LocationBus;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 
@@ -18,7 +19,6 @@ public class SurgePriceWidgetApplication extends Application {
     UberApiHandler uberApiHandler;
 
     @Override public void onCreate() {
-        Log.d("testing", "application onCreate");
         super.onCreate();
 
         final String serverToken = getString(R.string.server_token);
@@ -41,4 +41,6 @@ public class SurgePriceWidgetApplication extends Application {
                 .build()
                 .create(UberApi.class);
     }
+
+
 }
