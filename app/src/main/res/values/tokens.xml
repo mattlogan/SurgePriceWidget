@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_token">Get a server token at https://developer.uber.com/</string>
+</resources>
