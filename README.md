@@ -2,7 +2,14 @@
 
 To use this app for yourself, you'll need a server token for the Uber API.  Get that at https://developer.uber.com.
 
-When you have obtained a server token, add it to `tokens.xml` in `res/values`.
+When you have obtained a server token, create a new file in `res/values` called `tokens.xml` (or something similar) and add your server token.  For example:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_token">87ywef987y2r3iuohfwef23r2o9</string>
+</resources>
+```
 
 ### Todo
 
