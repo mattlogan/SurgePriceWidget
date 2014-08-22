@@ -23,12 +23,10 @@ public class UberApiHandler {
     public UberApiHandler(UberApi uberApi, UberApiBus uberApiBus) {
         this.uberApi = uberApi;
         this.uberApiBus = uberApiBus;
-        Log.d("testing", "registering handler");
         this.uberApiBus.register(this);
     }
 
     @Subscribe public void onRetrievePricesRequested(RetrievePricesRequestedEvent event) {
-        Log.d("testing", "onRetrievePricesRequested");
         Map<String, Float> locations = new HashMap<String, Float>();
         locations.put("start_latitude", event.startLatitude);
         locations.put("start_longitude", event.startLongitude);
