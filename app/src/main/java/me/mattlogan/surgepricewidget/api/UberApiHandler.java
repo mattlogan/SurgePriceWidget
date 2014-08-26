@@ -38,7 +38,6 @@ public class UberApiHandler {
                     }
 
                     @Override public void failure(RetrofitError error) {
-                        Log.d("testing", "failure: " + error.getMessage());
                         uberApiBus.post(new RetrievePricesFailedEvent());
                     }
                 });
